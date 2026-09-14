@@ -1,7 +1,3 @@
-ARTI 303 - Lab Assignment 01
-Family Tree Queries
-Student: Ghala Alsalem
-
 19 ?- male(khalid).
 true.
 
