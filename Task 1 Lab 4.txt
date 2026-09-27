@@ -1,0 +1,66 @@
+27 ?- house = house.
+true.
+
+28 ?- house = abc.
+false.
+
+29 ?- edge(a,b) = edge(C,b).
+C = a.
+
+30 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+
+31 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+
+32 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+
+33 ?- edge(A,A) = edge(b,c).
+false.
+
+34 ?- edge(A,A) = edge(b,b).
+A = b.
+
+35 ?- A = B, B = f.
+A = B, B = f.
+
+36 ?- A = B, B = f, A = e.
+false.
+
+
+Explanations:
+
+1. house = house
+The terms can be unified because both are the same atom, house.
+
+2. house = abc
+The terms cannot be unified because house and abc are different atoms.
+
+3. edge(a,b) = edge(C,b)
+The terms can be unified by assigning C = a.
+
+4. edge(a,d) = edge(C,B)
+The terms can be unified by assigning C = a and B = d.
+
+5. edge(C,B) = edge(a,d)
+The terms can be unified by assigning C = a and B = d.
+
+6. edge(A,f(g,h)) = edge(a,B)
+The terms can be unified by assigning A = a and B = f(g,h).
+
+7. edge(A,A) = edge(b,c)
+The terms cannot be unified because the same variable A would need to have two different values, b and c.
+
+8. edge(A,A) = edge(b,b)
+The terms can be unified because both occurrences of A can have the same value, b.
+
+9. A = B, B = f
+The terms can be unified because A and B are linked, and B is given the value f.
+
+10. A = B, B = f, A = e
+The terms cannot be unified because A and B are linked and B becomes f, but the last condition tries to make A = e.
+
